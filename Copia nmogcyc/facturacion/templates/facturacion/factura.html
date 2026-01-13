@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura #{{ factura.id }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .cliente, .fecha, .total {
+            margin: 20px 0;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        table, th, td {
+            border: 1px solid #333;
+        }
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Factura #{{ factura.id }}</h1>
+
+    <div class="cliente">Cliente: {{ factura.cliente }}</div>
+    <div class="fecha">Fecha: {{ factura.fecha }}</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto / Servicio</th>
+                <th>Cantidad</th>
+                <th>Precio unitario</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí puedes iterar sobre los items de la factura si los tienes -->
+            <!-- Ejemplo:
+            {% for item in factura.items.all %}
+            <tr>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.precio_unitario }}</td>
+                <td>{{ item.subtotal }}</td>
+            </tr>
+            {% endfor %}
+            -->
+        </tbody>
+    </table>
+
+    <div class="total">Total: ${{ factura.total }}</div>
+</body>
+</html>

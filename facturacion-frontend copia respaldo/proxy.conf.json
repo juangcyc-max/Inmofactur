@@ -1,0 +1,12 @@
+{
+  "/facturacion/api/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/facturacion/admin/*": {
+    "target": "http://localhost:8000",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
